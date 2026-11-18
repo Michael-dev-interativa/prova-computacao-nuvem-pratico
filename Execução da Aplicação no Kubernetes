@@ -1,0 +1,34 @@
+kubectl get pods
+
+NAME                     READY   STATUS    RESTARTS   AGE
+nginx-69b9cdbbdd-4hz72   1/1     Running   0          22s
+nginx-69b9cdbbdd-ff7zn   1/1     Running   0          22s
+nginx-69b9cdbbdd-wwjqj   1/1     Running   0          22s
+=====================================================================================================
+kubectl scale deployment comunicado-web --replicas=3
+
+deployment.apps/comunicado-web scaled
+=====================================================================================================
+kubectl get pods
+
+NAME                              READY   STATUS    RESTARTS   AGE
+comunicado-web-84c6b7b75f-cw2wq   1/1     Running   0          2m1s
+comunicado-web-84c6b7b75f-jchgl   1/1     Running   0          87s
+comunicado-web-84c6b7b75f-rdm5d   1/1     Running   0          87s
+nginx-69b9cdbbdd-4hz72            1/1     Running   0          3m47s
+nginx-69b9cdbbdd-ff7zn            1/1     Running   0          3m47s
+nginx-69b9cdbbdd-wwjqj            1/1     Running   0          3m47s
+=====================================================================================================
+kubectl delete pod comunicado-web-84c6b7b75f-cw2wq
+
+pod "comunicado-web-84c6b7b75f-cw2wq" deleted from default namespace
+=====================================================================================================
+kubectl get pods  
+
+NAME                              READY   STATUS    RESTARTS   AGE
+comunicado-web-84c6b7b75f-b7qq9   1/1     Running   0          23s
+comunicado-web-84c6b7b75f-jchgl   1/1     Running   0          2m54s
+comunicado-web-84c6b7b75f-rdm5d   1/1     Running   0          2m54s
+nginx-69b9cdbbdd-4hz72            1/1     Running   0          5m14s
+nginx-69b9cdbbdd-ff7zn            1/1     Running   0          5m14s
+nginx-69b9cdbbdd-wwjqj            1/1     Running   0          5m14s
