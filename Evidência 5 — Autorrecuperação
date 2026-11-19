@@ -1,0 +1,7 @@
+kubectl delete pod comunicado-web-abc123-12345
+kubectl get pods
+
+NAME                            READY   STATUS    RESTARTS   AGE
+comunicado-web-abc123-23456     1/1     Running   0          2m
+comunicado-web-abc123-34567     1/1     Running   0          2m
+comunicado-web-abc123-45678     1/1     Running   0          10s
