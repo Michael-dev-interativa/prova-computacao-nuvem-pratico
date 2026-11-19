@@ -1,0 +1,13 @@
+kubectl get services
+
+NAME                TYPE        CLUSTER-IP      PORT(S)
+kubernetes          ClusterIP   10.96.0.1       443/TCP
+comunicado-service  ClusterIP   10.96.120.10    80/TCP
+
+kubectl run teste --image=curlimages/curl --rm -it --restart=Never --command -- curl -i http://comunicado-service
+
+HTTP/1.1 200 OK
+Server: nginx
+
+<h1>Aplicação executada com sucesso!</h1>
+<p>Olá! Meu nome é Michael.</p>
